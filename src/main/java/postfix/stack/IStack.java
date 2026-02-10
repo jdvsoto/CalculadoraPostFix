@@ -1,44 +1,51 @@
 package postfix.stack;
 
+/**
+ * Interface que define las operaciones básicas de una pila (stack) de tipo genérico.
+
+ * @param <T> el tipo de dato que almacenará la pila
+ */
 public interface IStack<T> {
 
     /**
-     * Pushes an element onto the top of this stack.
+     * Inserta (empuja) un elemento en la parte superior de la pila.
      *
-     * @param value the element to be pushed onto the stack
+     * @param value el elemento a insertar en la pila
      */
     void push(T value);
 
     /**
-     * Removes and returns the element at the top of this stack.
+     * Extrae (saca) y retorna el elemento en la parte superior de la pila.
      *
-     * @return the element at the top of this stack
+     * @return el elemento retirado de la pila
+     * @throws java.util.NoSuchElementException si la pila está vacía
      */
     T pop();
 
     /**
-     * Returns the element at the top of this stack without removing it.
+     * Devuelve, sin remover, el elemento en la parte superior de la pila.
      *
-     * @return the element at the top of this stack
+     * @return el elemento en la cima de la pila
+     
      */
     T peek();
 
     /**
-     * Tests if this stack is empty.
+     * Indica si la pila no contiene elementos.
      *
-     * @return true if this stack contains no elements; false otherwise
+     * @return {@code true} si la pila está vacía; {@code false} en caso contrario
      */
     boolean isEmpty();
 
     /**
-     * Returns the number of elements in this stack.
+     * Devuelve la cantidad de elementos almacenados actualmente en la pila.
      *
-     * @return the number of elements in this stack
+     * @return el número de elementos en la pila
      */
     int size();
 
     /**
-     * Removes all elements from this stack.
+     * Elimina todos los elementos de la pila, dejando la estructura vacía.
      */
     void clear();
 }
